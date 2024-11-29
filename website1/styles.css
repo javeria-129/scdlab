@@ -1,0 +1,487 @@
+/* General Styles */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-image: url('whitegolden.jpg'); /* Replace with your image file path */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the image */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+}
+main {
+    background-image: url('whitegolden.jpg'); /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Default text color for content in main */
+    font-family: 'Roboto', sans-serif; /* Use the Roboto font */
+}
+
+
+/* Navbar Styles */
+.Navbar {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1%;
+}
+
+.Navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.Navbar li {
+    margin: 0 4px;
+    padding: 10px 20px;
+    position: relative;
+    display: block;
+}
+
+.Navbar a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.Navbar a:hover {
+    background-color: #333333;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: #FFD700;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.header-content {
+    z-index: 1;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+}
+
+/* Service Section */
+.banner-text{
+    position: absolute;
+    top: 0%;
+    margin-left: 80px;
+    color: #fff;
+    padding: 20px;
+}
+
+.banner-text h4{
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+.slider-container {
+    position: relative;
+    width: 100%; /* Responsive width */
+    height: 600px; /* Set fixed height */
+    margin: auto;
+    overflow: hidden; /* Hide overflowing images */
+}
+
+.slide-container {
+    position: relative; /* Position relative to allow absolute positioning of the text */
+    width: 100%; /* Each image fully occupies the container width */
+    flex-shrink: 0;
+}
+
+.slide {
+    width: 100%; /* Each image fully occupies the container width */
+    object-fit: cover; /* Scale images proportionally */
+    height: 100%; /* Match the container height */
+}
+
+.image-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+    width: 100%; /* Initially fit container */
+}
+
+.slide-container.active .banner-text {
+    display: block; /* Show the banner text only for the active slide */
+}
+
+.banner-text p{
+    font-size: 30px;
+    margin-top: 4px;
+}
+
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 200px; /* Decrease height for smaller screens */
+    }
+    .banner-text {
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+
+.arrow {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for centering */
+    font-size: 50px; /* Size of the arrows */
+    color: white; /* Color of the arrows */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 10; /* Ensure arrows are on top of images */
+}
+
+.left {
+    left: 10px; /* Position left arrow */
+}
+
+.right {
+    right: 10px; /* Position right arrow */
+} 
+
+
+.service {
+    padding: 3rem 2rem;
+    background: transparent; /* Ensures no color override */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.service .heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.service .heading span {
+    color: var(--main-color);
+}
+.service .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); /* Increased minimum width */
+    gap: 1rem; /* Adjust gap if necessary */
+}
+
+
+.service .box-container .box {
+    border-radius: 1rem;
+    background: black;
+    text-align: center;
+    padding: 1.5rem; /* Reduced padding inside the card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service .box-container .box:hover {
+    transform: scale(1.05);
+}
+
+.service .box-container .box i {
+    height: 5rem; /* Reduced icon size */
+    width: 5rem; /* Reduced icon size */
+    line-height: 5rem; /* Adjusted for icon center alignment */
+    font-size: 2rem; /* Reduced font size for icons */
+    background: var(--main-color);
+    color: #FFD700;
+    margin-bottom: 0.8rem; /* Reduced space between icon and heading */
+}
+
+.service .box-container .box h3 {
+    font-size: 1.6rem; /* Reduced heading size */
+    color: #fff;
+    margin-bottom: 0.8rem; /* Reduced space between heading and text */
+}
+
+.service .box-container .box p {
+    font-size: 1.2rem; /* Reduced font size for the paragraph */
+    color: #ddd;
+    line-height: 1.4; /* Adjusted line-height for smaller text */
+}
+
+
+/* About Us Section */
+.about-us {
+    padding: 3rem 2rem;
+    background: transparent; /* Ensures no default white background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-us .heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: -3%;
+    color: #333;
+}
+
+.about-us .heading span {
+    color: var(--main-color);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.about-container .about-image {
+    flex: 1;
+    text-align: center;
+    width: 100%;
+}
+
+.about-container .sub-heading {
+    font-size: 1.8rem; /* Slightly smaller than the main heading */
+    font-weight: 700; /* Ensures bold weight */
+    font-family: 'Roboto', sans-serif; /* Use bold variant of Roboto */
+    color: black; /* Matches the theme color */
+    margin-top: -50px; /* Moves the subheading upwards */
+    margin-bottom: 1rem; /* Adds spacing below the sub-heading */
+    text-align: left; /* Aligns text to the left for a professional look */
+    text-transform: uppercase; /* Makes the text uppercase */
+    letter-spacing: 0.05rem; /* Adds a slight spacing between letters */
+}
+
+
+
+.about-container .about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-container .about-description {
+    flex: 2;
+    font-size: 1.4rem;
+    color: black;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.about-container .about-description p {
+    margin-bottom: 1rem;
+} 
+/* Footer Section */
+footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.social-icons img {
+    width: 25px;
+    margin: 0 8px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .service-cards, .feature-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        height: 200px;
+    }
+
+    .banner-text {
+        font-size: 14px;
+    }
+}
+
+.search {
+    display: flex; 
+    align-items: center; 
+}
+
+.search input {
+    padding: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 15px;
+    outline: none; 
+}
+
+.search button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: black; 
+    color: #FFD700;
+    border-radius: 15px;
+    cursor: pointer; 
+    transition: background 0.3s; 
+}
+
+.search button:hover {
+    background-color: #333333; 
+}
+
+/* Partition Section Styling */
+.partition {
+    display: flex; /* Center content horizontally and vertically */
+    justify-content: center; /* Align content horizontally */
+    align-items: center; /* Align content vertically */
+    background-color: #c5ac76; /* Partition background color */
+    padding: 2rem 0; /* Spacing inside the partition */
+    margin: 2rem 0; /* Spacing between sections */
+    border-top: 3px solid #a88954; /* Optional: Add a top border */
+    border-bottom: 3px solid #a88954; /* Optional: Add a bottom border */
+}
+
+.partition .part {
+    text-align: center; /* Center-align the text */
+    color: white; /* Text color */
+    font-size: 1.5rem; /* Font size for the text */
+    font-family: 'Roboto', sans-serif; /* Matching font-family */
+    letter-spacing: 0.05rem; /* Slight spacing between letters */
+    text-transform: uppercase; /* Optional: Make text uppercase */
+    margin: 0;
+}
+
+section.partition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c5ac76; /* Correct background */
+    padding: 2rem 0;
+    margin: 2rem 0;
+    border-top: 3px solid #a88954;
+    border-bottom: 3px solid #a88954;
+}
+
+.features {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.features .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.features .box {
+    width: 300px;
+    padding: 20px;
+    background: #c5ac76;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features .box:hover {
+    transform: translateY(-10px); /* Moves the box slightly upward */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhances shadow for a "lift" effect */
+}
+.features .box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.features .box p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.feature-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #8d6724;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.feature-btn:hover {
+    background-color: #704f1b; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #c5ac76;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.logo{
+    height: 70px; 
+    margin-right: 5px; 
+    width: 100px;
+}

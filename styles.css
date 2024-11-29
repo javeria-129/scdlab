@@ -1,0 +1,165 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-image: url('https://youmustlovefood.com/blog/catering-ideas-for-birthday-party/'); /* Example image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    z-index: 2; /* Ensure content is above the background */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    z-index: 1; /* Place overlay below the content */
+}
+
+.cta-button {
+    background: #FF5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    z-index: 2; /* Ensure buttons are above the overlay */
+}
+
+.cta-button:hover {
+    background: #E64A19;
+}
+
+/* Features Section Styles */
+#features {
+    padding: 40px 20px;
+    background: #f4f4f4;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* How It Works Section Styles */
+#how-it-works {
+    padding: 40px 20px;
+}
+
+#how-it-works ol {
+    margin-left: 20px;
+}
+
+/* Testimonials Section Styles */
+#testimonials {
+    padding: 40px 20px;
+    background: #e9ecef;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 20px 0;
+    padding: 10px;
+    border-left: 5px solid #4CAF50;
+}
+
+/* Pricing Section Styles */
+#pricing {
+    padding: 40px 20px;
+}
+
+#pricing h2 {
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #FF5722;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    color: white;
+}

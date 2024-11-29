@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="services.css">
+    <title>Homepage</title>
+</head>
+<body>
+    <nav class="Navbar">
+        <ul>
+            <li><img src="ems.png" alt="Logo" class="logo"></li>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="index.php">LOGIN</a></li>
+            <li class="search">
+                <input type="text" placeholder="Search...">
+                <button type="submit">Search</button>
+            </li>
+        </ul>
+    </nav>
+
+    <img src="usabout.jpg" alt="Banner Image" class="banner-image">
+
+    <div class="services-section">
+        <div class="services-container">
+            <h2 class="services-heading">OUR SERVICES</h2>
+            <div class="image-row">
+                <div class="image-item">
+                    <img src="services1.jpg" alt="Image 1" class="image">
+                    <h3>EVENTS FULL SERVICE</h3>
+                    <p class="image-text">We provide full services for events like Shaadi, Valima, and more. Contact our Event Managers for details.</p>
+                </div>
+                <div class="image-item">
+                    <img src="services2.jpg" alt="Image 2" class="image">
+                    <h3>DECOR SERVICES</h3>
+                    <p class="image-text">We provide rental services such as marquee/tent, furniture, LED lights etc. Decor services are available as well. Please contact our Event Managers for further details.</p>
+                </div>
+                <div class="image-item">
+                    <img src="services3.jpg" alt="Image 3" class="image">
+                    <h3>EVENT MANAGEMENT</h3>
+                    <p class="image-text">Our Event Managers can help make your dreams become reality, please contact for further details.</p>
+                </div>
+                <div class="image-item">
+                    <img src="services4.jpg" alt="Image 4" class="image">
+                    <h3>DANCE FLOORS</h3>
+                    <p class="image-text">We have following options for you in Dance floors: Acrylic, Panaflex, LED. For the right choice of floor please contact our Event managers.</p>
+                </div>
+                <div class="image-item">
+                    <img src="services5.jpg" alt="Image 5" class="image">
+                    <h3>FOOD AND CATERING</h3>
+                    <p class="image-text">We provide catering for all sorts of events. The gathering should not be less than 50 people. To select a perfect menu for your event please visit the Menu section for details.</p>
+                </div>
+                <div class="image-item">
+                    <img src="services6.jpg" alt="Image 6" class="image">
+                    <h3>CARD PRINTING</h3>
+                    <p class="image-text">We provide card printing services as well. Please make your booking with us four months in advance.</p>
+                </div>
+                <div class="image-item">
+                    <img src="services7.jpg" alt="Image 7" class="image">
+                    <h3>PHOTOGRAPHY</h3>
+                    <p class="image-text">• O’ Shoot – Mutahir Mahmood <br> • Studio9 – Nusrat Jamal <br> • Lighthouse Photography – Ali Khurshid <br> • Fatima Tariq Photography <br> • Kashif Dossani Photography <br> Please contact our Event Managers for further details.</p>
+                </div>
+                <div class="image-item">
+                    <img src="services8.jpg" alt="Image 8" class="image">
+                    <h3>MAKEUP</h3>
+                    <p class="image-text">• Omayr Waqar <br> • Nabilas <br> • Natasha Salon <br> • Shamain Salon <br> • Anam Falak <br> Please contact our Event Managers for further details.</p>
+                </div>
+                <div class="image-item">
+                    <img src="services9.jpg" alt="Image 9" class="image">
+                    <h3>SECURITY</h3>
+                    <p class="image-text">We provide private security services in association with SGS security, which is one of the leading security companies providing services for over a decade. Services include wide range of Guarding Services, Technical Security Solutions etc. Please contact for further details.</p>
+                </div>
+                <div class="image-item">
+                    <img src="services10.jpg" alt="Image 8" class="image">
+                    <h3>LIGHTING AND SOUND</h3>
+                    <p class="image-text">• Theatre Lighting<br> • 3D Projection<br> • LED Lighting<br> • Par Can Lights<br> • Walkway Lamps<br> • General Lighting<br> • Concert Lighting<br> • Fairy Lights<br> • Chandeliers<br> Please contact our Event Managers for further details.</p>
+                </div>
+                <div class="image-item">
+                    <img src="services11.jpg" alt="Image 11" class="image">
+                    <h3>P.R. EVENTS</h3>
+                    <p class="image-text">We function as a full business partner to our clients, providing PR consulting and integrated marketing services that build brand reputation and offer real solutions to business challenges.<br> #eventopiapr</p>
+                </div>
+                <div class="image-item">
+                    <img src="services12.jpg" alt="Image 12" class="image">
+                    <h3>DISC JOCKEY-DJ</h3>
+                    <p class="image-text">For the right choice of DJ for your musical event, please contact our Event manager.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const banner = document.querySelector('.banner-image');
+            const imageRow = document.querySelector('.image-row');
+            const servicesHeading = document.querySelector('.services-heading');
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition < 350) {
+                imageRow.style.top = 350 - scrollPosition + 'px';
+                servicesHeading.style.top = 350 - scrollPosition + 'px';
+            } else {
+                imageRow.style.top = '0px';
+                servicesHeading.style.top = '0px';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Global body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%; /* Ensure body takes full height */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Banner Image */
+.banner-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Keeps the banner behind other content */
+}
+
+/* Main section with space for banner */
+main {
+    position: relative;
+    padding-top: 400px; /* Space to prevent content from hiding behind the banner */
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar styles */
+.Navbar {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1%;
+    position: fixed; /* Fixed positioning to keep the navbar in place */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure it spans the full width of the screen */
+    z-index: 10; /* Make sure navbar is above other content */
+    box-sizing: border-box;
+}
+
+.Navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.Navbar li {
+    margin: 0 7px;
+    padding: 10px 20px;
+    position: relative;
+    display: block;
+}
+
+.Navbar a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.Navbar a:hover {
+    background-color: #333333;
+    color: white;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+}
+
+.search button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: black;
+    color: #FFD700;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search button:hover {
+    background-color: #333333;
+}
+
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px;
+    margin: 0 auto;
+    position: relative; /* Change to relative */
+    z-index: 1; /* Ensure it is above the banner */
+    box-sizing: border-box;
+    margin-top: 50px; /* Adjust as needed */
+}
+
+.image-item {
+    text-align: center;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px; /* Added space for alignment */
+}
+
+.image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.image-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.image-heading {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #444;
+    font-weight: bold;
+}
+
+/* Services heading */
+.services-container {
+    background-image: url('marble.jpg'); /* Background image for both heading and image row */
+    background-size: cover; /* Ensure the background image covers the area */
+    background-position: center; /* Center the background image */
+    padding: 20px 0; /* Add padding to give some space around the content */
+    position: relative; /* Ensure it is positioned relative for absolute children */
+    z-index: 1; /* Ensure it is above the banner */
+}
+
+.services-heading {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #c5ac76;
+    margin-bottom: 10px;
+    z-index: 2; /* Ensure it stays on top of the image row */
+    position: relative; /* Position relative to the container */
+}
+
+/* Preventing large spaces between columns */
+@media (max-width: 1200px) {
+    .image-item {
+        width: 45%; /* Adjust width on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .image-item {
+        width: 100%; /* Make each item take full width on small screens */
+    }
+}
+

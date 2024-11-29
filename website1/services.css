@@ -1,0 +1,164 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-image: url('marble.jpg'); /* Replace with your image file path */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the image */
+    height: auto; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+.banner-image {
+    width: 100%; /* Ensures the image takes up the full width of the screen */
+    height: 350px; /* Maintains the aspect ratio */
+    object-fit: cover; /* Ensures the image covers the available space without distortion */
+    display: block; /* Removes any space below the image */
+}
+.logo{
+    height: 70px; 
+    margin-right: 5px; 
+    width: 100px;
+}
+
+main {
+    background-image: url('marble.jpg'); /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Default text color for content in main */
+    font-family: 'Roboto', sans-serif; /* Use the Roboto font */
+}
+
+
+.image-row {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Space between the images */
+    padding: 40px; /* Adjust padding for container */
+    margin: 0 auto;
+}
+
+.image-item {
+    text-align: center;
+    width: 30%; /* Adjust the width to fit 3 items per row */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.image-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.image-heading {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #444;
+    font-weight: bold;
+}
+
+h1{
+    color: #c5ac76;
+    font-size: 26px;
+}
+
+.Navbar {
+    background-color:black;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1%;
+}
+
+.Navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.Navbar li {
+    margin: 0 4px;
+    padding: 10px 20px;
+    position: relative;
+    display: block;
+}
+
+.Navbar a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.Navbar a:hover {
+    background-color: #333333;
+    color: white;
+}
+
+.search {
+    display: flex; 
+    align-items: center; 
+}
+
+.search input {
+    padding: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 15px;
+    outline: none; 
+}
+
+.search button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: black; 
+    color: #FFD700;
+    border-radius: 15px;
+    cursor: pointer; 
+    transition: background 0.3s; 
+}
+
+.search button:hover {
+    background-color: #333333; 
+}
+
+.services-heading {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #c5ac76;
+    
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #c5ac76;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+

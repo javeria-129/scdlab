@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Creation and Management</title>
+    <link rel="stylesheet" href="eventcreation.css">
+</head>
+<body>
+    <header>
+        <h1>Event Creation and Management</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Create Events with Ease</h2>
+            <p>Effortlessly create, manage, and track events using our intuitive tools.</p>
+            <h3>Features</h3>
+            <ul>
+                <li>Detailed event planning tools</li>
+                <li>Reminders and task management</li>
+                <li>Progress tracking</li>
+                <li>Image Upload</li>
+                <li>Live Preview</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Create a New Event</h2>
+            <form id="event-form" enctype="multipart/form-data">
+                <!-- Event Name -->
+                <label for="event-name">Event Name</label>
+                <input type="text" id="event-name" name="event-name" placeholder="Enter event name" required>
+
+                <!-- Event Date -->
+                <label for="event-date">Event Date</label>
+                <input type="date" id="event-date" name="event-date" required>
+
+                <!-- Event Time -->
+                <label for="event-time">Event Time</label>
+                <input type="time" id="event-time" name="event-time" required>
+
+                <!-- Location -->
+                <label for="event-location">Event Location</label>
+                <input type="text" id="event-location" name="event-location" placeholder="Enter event location" required>
+
+                <!-- Event Type -->
+                <label for="event-type">Event Type</label>
+                <select id="event-type" name="event-type">
+                    <option value="conference">Conference</option>
+                    <option value="webinar">Webinar</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="social">Social Gathering</option>
+                </select>
+
+                <!-- Event Image -->
+                <label for="event-image">Event Image</label>
+                <input type="file" id="event-image" name="event-image" accept="image/*">
+
+                <!-- Description -->
+                <label for="event-description">Event Description</label>
+                <textarea id="event-description" name="event-description" rows="5" placeholder="Write a brief description of the event..." required></textarea>
+
+                <!-- Number of Attendees -->
+                <label for="event-attendees">Expected Number of Attendees</label>
+                <input type="number" id="event-attendees" name="event-attendees" placeholder="Enter the expected number of attendees" required>
+
+                <!-- Submit Button -->
+                <button type="submit">Create Event</button>
+            </form>
+        </section>
+
+        <section id="event-preview-section">
+            <h3>Event Preview</h3>
+            <div id="event-preview">
+                <h4 id="preview-name"></h4>
+                <p><strong>Date:</strong> <span id="preview-date"></span></p>
+                <p><strong>Time:</strong> <span id="preview-time"></span></p>
+                <p><strong>Location:</strong> <span id="preview-location"></span></p>
+                <p><strong>Type:</strong> <span id="preview-type"></span></p>
+                <p><strong>Description:</strong> <span id="preview-description"></span></p>
+                <p><strong>Expected Attendees:</strong> <span id="preview-attendees"></span></p>
+                <img id="preview-image" src="" alt="Event Image Preview" style="max-width: 200px; max-height: 200px; display: none;">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Event Platform</p>
+    </footer>
+
+    <script>
+        document.getElementById('event-form').addEventListener('input', function() {
+            // Dynamic Preview Update
+            const eventName = document.getElementById('event-name').value;
+            const eventDate = document.getElementById('event-date').value;
+            const eventTime = document.getElementById('event-time').value;
+            const eventLocation = document.getElementById('event-location').value;
+            const eventType = document.getElementById('event-type').value;
+            const eventDescription = document.getElementById('event-description').value;
+            const eventAttendees = document.getElementById('event-attendees').value;
+            const eventImage = document.getElementById('event-image').files[0];
+
+            // Update preview section
+            document.getElementById('preview-name').textContent = eventName || "Event Name";
+            document.getElementById('preview-date').textContent = eventDate || "Event Date";
+            document.getElementById('preview-time').textContent = eventTime || "Event Time";
+            document.getElementById('preview-location').textContent = eventLocation || "Event Location";
+            document.getElementById('preview-type').textContent = eventType || "Event Type";
+            document.getElementById('preview-description').textContent = eventDescription || "Event Description";
+            document.getElementById('preview-attendees').textContent = eventAttendees || "Number of Attendees";
+
+            if (eventImage) {
+                const reader = new FileReader();
+                reader.onload = function() {
+                    document.getElementById('preview-image').src = reader.result;
+                    document.getElementById('preview-image').style.display = 'block';
+                };
+                reader.readAsDataURL(eventImage);
+            }
+        });
+
+        document.getElementById('event-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const eventName = document.getElementById('event-name').value;
+            const eventDate = document.getElementById('event-date').value;
+            const eventTime = document.getElementById('event-time').value;
+            const eventLocation = document.getElementById('event-location').value;
+            const eventType = document.getElementById('event-type').value;
+            const eventDescription = document.getElementById('event-description').value;
+            const eventAttendees = document.getElementById('event-attendees').value;
+
+            alert(`Event Created Successfully!
+                Name: ${eventName}
+                Date: ${eventDate}
+                Time: ${eventTime}
+                Location: ${eventLocation}
+                Type: ${eventType}
+                Description: ${eventDescription}
+                Expected Attendees: ${eventAttendees}`);
+        });
+    </script>
+</body>
+</html>
