@@ -1,0 +1,224 @@
+/* eventcreation.css */
+
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-image: url('whitegolden.jpg');
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1.8em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Layout */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Sections */
+section {
+    padding: 20px 30px;
+}
+
+section h2, section h3 {
+    font-family: 'Playfair Display', serif;
+    color: #34495e;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #bdc3c7;
+    display: inline-block;
+}
+
+/* Features List */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+ul li::before {
+    content: "•";
+    color: black;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+/* Form Styling */
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input, form textarea, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    background-color: black;
+    color: #FFD700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+/* Preview Section */
+#event-preview {
+    background-color: #c5ac76;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#event-preview img {
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #c5ac76;
+    color: #ecf0f1;
+    font-size: 0.9em;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Add Responsive Design */
+@media (max-width: 768px) {
+    main {
+        margin: 10px;
+    }
+
+    section {
+        padding: 15px 20px;
+    }
+}
+
+.Navbar {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1%;
+}
+
+.Navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.Navbar li {
+    margin: 0 4px;
+    padding: 10px 20px;
+    position: relative;
+    display: block;
+}
+
+.Navbar a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.Navbar a:hover {
+    background-color: #333333;
+    color: white;
+}
+
+.logo{
+    height: 70px; 
+    margin-right: 5px; 
+    width: 100px;
+}
+
+.search {
+    display: flex; 
+    align-items: center; 
+}
+
+.search input {
+    padding: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 15px;
+    outline: none; 
+}
+
+.search button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: black; 
+    color: #FFD700;
+    border-radius: 15px;
+    cursor: pointer; 
+    transition: background 0.3s; 
+}
+
+.search button:hover {
+    background-color: #333333; 
+}
+
+/* Toast notification */
+.toast {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+    position: fixed;
+    z-index: 1000;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease, top 0.5s ease;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    top: 50px;
+}
+
+/* Add additional styling for the form and page if necessary */
