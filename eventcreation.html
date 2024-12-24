@@ -40,7 +40,7 @@
 
         <section>
             <h2>Create a New Event</h2>
-            <form id="event-form" method="post" action="save_event.php">
+            <form id="event-form" method="post">
 
                 <!-- Event Name -->
                 <label for="event-name">Event Name</label>
@@ -98,8 +98,8 @@
     </footer>
 
     <script>
-        document.getElementById('event-form').addEventListener('input', function() {
-            // Dynamic Preview Update
+        // Dynamic Preview Update
+        document.getElementById('event-form').addEventListener('input', function () {
             const eventName = document.getElementById('event-name').value;
             const eventDate = document.getElementById('event-date').value;
             const eventTime = document.getElementById('event-time').value;
@@ -108,7 +108,6 @@
             const eventDescription = document.getElementById('event-description').value;
             const eventAttendees = document.getElementById('event-attendees').value;
 
-            // Update preview section
             document.getElementById('preview-name').textContent = eventName || "Event Name";
             document.getElementById('preview-date').textContent = eventDate || "Event Date";
             document.getElementById('preview-time').textContent = eventTime || "Event Time";
@@ -118,24 +117,24 @@
             document.getElementById('preview-attendees').textContent = eventAttendees || "Number of Attendees";
         });
 
-        document.getElementById('event-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const eventName = document.getElementById('event-name').value;
-            const eventDate = document.getElementById('event-date').value;
-            const eventTime = document.getElementById('event-time').value;
-            const eventLocation = document.getElementById('event-location').value;
-            const eventType = document.getElementById('event-type').value;
-            const eventDescription = document.getElementById('event-description').value;
-            const eventAttendees = document.getElementById('event-attendees').value;
+        // Web Worker for Background Operations
+        const saveEventWorker = new Worker('saveEventWorker.js');
 
-            alert(`Event Created Successfully!
-                Name: ${eventName}
-                Date: ${eventDate}
-                Time: ${eventTime}
-                Location: ${eventLocation}
-                Type: ${eventType}
-                Description: ${eventDescription}
-                Expected Attendees: ${eventAttendees}`);
+        document.getElementById('event-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const eventDetails = Object.fromEntries(formData.entries());
+
+            saveEventWorker.postMessage(eventDetails);
+
+            saveEventWorker.onmessage = function (e) {
+                if (e.data.status === 'success') {
+                    alert(e.data.message);
+                } else {
+                    alert('Error: ' + e.data.message);
+                }
+            };
         });
     </script>
 </body>
