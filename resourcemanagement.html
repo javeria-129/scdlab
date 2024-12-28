@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Management</title>
+    <link rel="stylesheet" href="eventcreation.css">
+</head>
+<body>
+    <nav class="Navbar">
+        <ul>
+            <li><img src="events.jfif" alt="Logo" class="logo"></li>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="index.php">LOGIN</a></li>
+            <li class="search">
+                <input type="text" placeholder="Search...">
+                <button type="submit">Search</button>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Resource Management</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Manage Your Resources</h2>
+            <form id="resource-form">
+                <label for="resource-name">Name</label>
+                <input type="text" id="resource-name" name="resource-name" placeholder="Enter resource name (e.g., Hall, Projector)" required pattern="[A-Za-z ]+">
+
+                <label for="resource-type">Type</label>
+                <select id="resource-type" name="resource-type">
+                    <option value="venue">Venue</option>
+                    <option value="equipment">Equipment</option>
+                    <option value="staff">Staff</option>
+                </select>
+
+                <label for="resource-quantity">Quantity</label>
+                <input type="number" id="resource-quantity" name="resource-quantity" placeholder="Enter quantity needed" required>
+
+                <label for="needed-date">Event Date</label>
+                <input type="date" id="needed-date" name="needed-date" required>
+
+                <label for="resource-cost">Cost (in your currency)</label>
+                <input type="number" id="resource-cost" name="resource-cost" placeholder="Estimated cost" required min="0">
+
+                <label for="resource-description">Details</label>
+                <textarea id="resource-description" name="resource-description" rows="5" placeholder="Add details (e.g., size, requirements, special notes)" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="notification"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Event Platform</p>
+    </footer>
+
+    <script>
+        document.getElementById('resource-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            fetch('save_resource.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('notification').innerHTML = `<p>${data}</p>`;
+            })
+            .catch(error => {
+                document.getElementById('notification').innerHTML = `<p>Error: ${error}</p>`;
+            });
+        });
+
+        // Live Preview
+        document.getElementById('resource-form').addEventListener('input', function () {
+            const name = document.getElementById('resource-name').value;
+            const type = document.getElementById('resource-type').value;
+            const quantity = document.getElementById('resource-quantity').value;
+            const date = document.getElementById('needed-date').value;
+            const cost = document.getElementById('resource-cost').value;
+            const description = document.getElementById('resource-description').value;
+
+            document.getElementById('preview-resource-name').textContent = name || "Name";
+            document.getElementById('preview-resource-type').textContent = type || "Type";
+            document.getElementById('preview-resource-quantity').textContent = quantity || "Quantity";
+            document.getElementById('preview-needed-date').textContent = date || "Event Date";
+            document.getElementById('preview-resource-cost').textContent = cost || "Cost";
+            document.getElementById('preview-resource-description').textContent = description || "Details";
+        });
+    </script>
+</body>
+</html>
